@@ -213,9 +213,6 @@ LOGGING = {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s %(message)s',
         },
-        'warning': {
-            'format': '%(asctime)s %(levelname)s %(message)s\nPath: %(pathname)s',
-        },
         'error': {
             'format': '%(asctime)s %(levelname)s %(message)s\nPath: %(pathname)s\nStack trace: %(exc_info)s',
         },
