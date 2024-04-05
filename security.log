@@ -1,0 +1,99 @@
+INFO 2024-04-05 01:57:40 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 02:03:48 autoreload Watching for file changes with StatReloader
+ERROR 2024-04-05 02:04:00 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-04-05 02:04:04 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+INFO 2024-04-05 02:04:31 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/NewsPaper/settings.py changed, reloading.
+INFO 2024-04-05 02:04:31 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 02:04:34 autoreload Watching for file changes with StatReloader
+ERROR 2024-04-05 02:04:40 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-04-05 02:04:44 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-04-05 02:04:48 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/kirillskakov/PycharmProjects/NewsProjectD2.9/venv/lib/python3.11/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+INFO 2024-04-05 02:05:40 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/NewsPaper/settings.py changed, reloading.
+INFO 2024-04-05 02:05:43 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 02:47:07 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/news/views.py changed, reloading.
+INFO 2024-04-05 02:47:07 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 02:49:12 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/news/views.py changed, reloading.
+INFO 2024-04-05 02:49:12 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 02:50:21 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/news/views.py changed, reloading.
+INFO 2024-04-05 02:50:21 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 02:54:57 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 02:59:27 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/news/urls.py changed, reloading.
+INFO 2024-04-05 02:59:28 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:05:47 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:29:00 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:30:28 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/NewsPaper/settings.py changed, reloading.
+INFO 2024-04-05 03:30:28,896 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:30:33,327 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:31:49,533 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/news/urls.py changed, reloading.
+INFO 2024-04-05 03:31:50,033 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:35:56,374 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:36:37,400 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:37:43,924 autoreload /Users/kirillskakov/PycharmProjects/D13.4_News Portal/news/views.py changed, reloading.
+INFO 2024-04-05 03:37:44,413 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:44:44,884 autoreload Watching for file changes with StatReloader
+INFO 2024-04-05 03:50:35,459 autoreload Watching for file changes with StatReloader
