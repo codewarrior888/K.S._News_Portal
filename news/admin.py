@@ -8,8 +8,11 @@ class CategoryInline(admin.TabularInline):
 
 
 class PostAdmin(admin.ModelAdmin):
-    model = Post
+    model = Post, Category
     inlines = (CategoryInline,)
+    # list_display = ('post_genre', 'post_time')
+    list_filter = ('category', 'author')
+    search_fields = ('post_title', 'category__name')
 
 
 admin.site.register(Author)
