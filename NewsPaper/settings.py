@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv, find_dotenv
 
+
 load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -104,6 +105,14 @@ DATABASES = {
     }
 }
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': os.path.join(BASE_DIR, 'cache_files'),  # Указываем, куда будем сохранять кэшируемые файлы!
+        # Не забываем создать папку cache_files внутри папки с manage.py!
+        # 'TIMEOUT': 100,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -113,17 +122,17 @@ ACCOUNT_UNIQUE_EMAIL = os.getenv('ACCOUNT_UNIQUE_EMAIL')
 ACCOUNT_USERNAME_REQUIRED = os.getenv('ACCOUNT_USERNAME_REQUIRED')
 ACCOUNT_AUTHENTICATION_METHOD = os.getenv('ACCOUNT_AUTHENTICATION_METHOD')
 ACCOUNT_EMAIL_VERIFICATION = os.getenv('ACCOUNT_EMAIL_VERIFICATION')
-ACCOUNT_CONFIRM_EMAIL_ON_GET = os.getenv('ACCOUNT_CONFIRM_EMAIL_ON_GET')  #активирует аккаунт сразу, как только мы перейдём по ссылке
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 14  #хранит кол-во дней, когда доступна ссылка на подтверждение регистрации.
+ACCOUNT_CONFIRM_EMAIL_ON_GET = os.getenv('ACCOUNT_CONFIRM_EMAIL_ON_GET')
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 14
 
 LOGIN_REDIRECT_URL = "/news"
 LOGOUT_REDIRECT_URL = "/news"
 
 APSCHEDULER_DATETIME_FORMAT = 'N j, Y, f:s a'
-APSCHEDULER_RUN_NOW_TIMEOUT = 25  # кол-во секунд для выполнение операции, после чего выполняется остановка
+APSCHEDULER_RUN_NOW_TIMEOUT = 25
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  #отправка писем через почту
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  #для тестирования через консоль
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST = os.getenv('EMAIL_HOST')
 EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
@@ -185,3 +194,98 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+        'debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
+    },
+    'formatters': {
+        'simple': {
+            'format': '%(asctime)s %(levelname)s %(message)s'
+        },
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(message)s',
+        },
+        'warning': {
+            'format': '%(asctime)s %(levelname)s %(message)s\nPath: %(pathname)s',
+        },
+        'error': {
+            'format': '%(asctime)s %(levelname)s %(message)s\nPath: %(pathname)s\nStack trace: %(exc_info)s',
+        },
+        'mail': {
+            'format': '%(asctime)s %(levelname)s %(message)s\nPath: %(pathname)s',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'general_file': {
+            'level': 'INFO',
+            'filters': ['debug_false'],
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'general.log'),
+            'formatter': 'verbose',
+        },
+        'errors_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'errors.log'),
+            'formatter': 'error',
+        },
+        'security_file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'security.log'),
+            'formatter': 'verbose',
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler',
+            'formatter': 'mail',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'general_file', 'errors_file', 'security_file', 'mail_admins'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['errors_file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.server': {
+            'handlers': ['errors_file', 'mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.template': {
+            'handlers': ['errors_file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['errors_file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.security': {
+            'handlers': ['security_file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
