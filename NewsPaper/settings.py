@@ -213,6 +213,9 @@ LOGGING = {
         'verbose': {
             'format': '%(levelname)s %(asctime)s %(module)s %(message)s',
         },
+        'warning': {
+            'format': '%(asctime)s %(levelname)s %(message)s\nPath: %(pathname)s',
+        },
         'error': {
             'format': '%(asctime)s %(levelname)s %(message)s\nPath: %(pathname)s\nStack trace: %(exc_info)s',
         },
@@ -222,10 +225,22 @@ LOGGING = {
     },
     'handlers': {
         'console': {
-            'level': 'DEBUG',
+            'level': 'INFO',
             'filters': ['debug_true'],
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
+        },
+        'console_warning': {
+            'level': 'WARNING',
+            'filters': ['debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'warning',
+        },
+        'console_error': {
+            'level': 'ERROR',
+            'filters': ['debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'error',
         },
         'general_file': {
             'level': 'INFO',
@@ -255,7 +270,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'general_file', 'errors_file', 'security_file', 'mail_admins'],
+            'handlers': ['console', 'console_warning', 'console_error', 'general_file', 'errors_file', 'security_file', 'mail_admins'],
             'level': 'DEBUG',
             'propagate': True,
         },
